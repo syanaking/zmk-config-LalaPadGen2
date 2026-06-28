@@ -1,0 +1,76 @@
+draw_config:
+  key_w: 55
+  key_h: 50
+  split_gap: 18
+  small_pad: 4
+  line_spacing: 18
+  arc_radius: 6
+  inner_pad_w: 2
+  inner_pad_h: 2
+  glyph_tap_size: 14
+  glyph_hold_size: 10
+  glyph_shifted_size: 10
+  dark_mode: false
+
+parse_config:
+  # JP_ #define が C プリプロセッサで展開された後のキーコードを JIS 表示に変換
+  zmk_keycode_map:
+    # JP_ マクロ展開後の ZMK キーコード → JIS 表示
+    AT:                '"'   # JP_DQUOTE
+    CARET:             '&'   # JP_AMPERSAND
+    AMPERSAND:         "'"   # JP_QUOTE
+    UNDERSCORE:        '='   # JP_EQUAL
+    EQUAL:             '^'   # JP_CARET
+    COLON:             '+'   # JP_PLUS
+    PLUS:              '~'   # JP_TILDE
+    LEFT_BRACKET:      '@'   # JP_AT
+    SINGLE_QUOTE:      ':'   # JP_COLON
+    DOUBLE_QUOTES:     '*'   # JP_ASTERISK
+    LEFT_BRACE:        '`'   # JP_BACKQUOTE
+    RIGHT_BRACKET:     '['   # JP_LBRACKET
+    BSLH:              ']'   # JP_RBRACKET
+    BACKSLASH:         ']'   # JP_RBRACKET (別名)
+    ASTERISK:          '('   # JP_LPAREN
+    LEFT_PARENTHESIS:  ')'   # JP_RPAREN
+    RIGHT_BRACE:       '{'   # JP_LBRACE
+    PIPE:              '}'   # JP_RBRACE
+    # 日本語 IME キー
+    LANGUAGE_1:        'かな'
+    LANGUAGE_2:        '英数'
+    # Windows キー
+    LWIN:              'Win'
+    RWIN:              'Win'
+    # メディアキー（デフォルトで認識されない場合の補完）
+    C_PP:              '⏯'
+    C_PREV:            '⏮'
+    C_NEXT:            '⏭'
+    C_VOL_UP:          '🔊'
+    C_VOL_DN:          '🔉'
+    C_MUTE:            '🔇'
+    # スクロール
+    PG_UP:             'PgUp'
+    PG_DN:             'PgDn'
+    # 数字キーパッド
+    KP_NUMBER_0:       'KP0'
+    KP_NUMBER_1:       'KP1'
+    KP_NUMBER_2:       'KP2'
+    KP_NUMBER_3:       'KP3'
+    KP_NUMBER_4:       'KP4'
+    KP_NUMBER_5:       'KP5'
+    KP_NUMBER_6:       'KP6'
+    KP_NUMBER_7:       'KP7'
+    KP_NUMBER_8:       'KP8'
+    KP_NUMBER_9:       'KP9'
+    KP_PLUS:           'KP+'
+    KP_MINUS:          'KP-'
+    KP_MULTIPLY:       'KP*'
+    KP_DIVIDE:         'KP/'
+    KP_DOT:            'KP.'
+    # トラックパッド
+    PRINTSCREEN:       'PrtSc'
+
+  # 数値 HID コード直接指定のキーコードを JIS 表示に変換
+  raw_binding_map:
+    "0x89":     "¥"    # JP_YEN
+    "LS(0x89)": "|"    # JP_PIPE
+    "LS(0x87)": "_"    # JP_UNDERSCORE
