@@ -34,21 +34,25 @@ jobs:
       - name: Inject custom layout into parsed YAML
         run: |
           python3 - <<'EOF'
-          import yaml
+          import yaml, os
 
           with open('keymap-drawer/lalapadgen2.yaml', 'r', encoding='utf-8') as f:
               data = yaml.safe_load(f)
 
-          with open('config/lalapadgen2_layout.yaml', 'r', encoding='utf-8') as f:
-              layout = yaml.safe_load(f)
+          # layout spec: qmk_info_json + qmk_layout
+          # パスをワークフロー実行ディレクトリ（リポジトリルート）からの絶対パスに変換
+          cwd = os.getcwd()
+          layout = {
+              'qmk_info_json': os.path.join(cwd, 'config', 'lalapadgen2_info.json'),
+              'qmk_layout': 'LAYOUT',
+          }
 
-          # コメントを除いたキー定義のみ抽出して layout フィールドに注入
           data['layout'] = layout
 
           with open('keymap-drawer/lalapadgen2.yaml', 'w', encoding='utf-8') as f:
               yaml.dump(data, f, allow_unicode=True, default_flow_style=False)
 
-          print("Layout injected successfully")
+          print("Layout injected:", layout)
           EOF
 
       - name: Draw keymap
