@@ -1,0 +1,36 @@
+name: Draw keymap
+
+on:
+  push:
+    paths:
+      - "config/lalapadgen2.keymap"
+      - "config/keymap_drawer.config.yaml"
+      - "config/lalapadgen2_layout.yaml"
+      - ".github/workflows/draw-keymaps.yml"
+  workflow_dispatch:
+
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Draw keymap
+        uses: caksoylar/keymap-drawer@main
+        with:
+          keymap_file: config/lalapadgen2.keymap
+          output_folder: keymap-drawer
+          config: config/keymap_drawer.config.yaml
+          layout: config/lalapadgen2_layout.yaml
+
+      - name: Commit and push SVG files
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add keymap-drawer/
+          git diff --staged --quiet || git commit -m "ci: update keymap drawings [skip ci]"
+          git push
