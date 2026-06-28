@@ -31,10 +31,30 @@ jobs:
             parse -z config/lalapadgen2.keymap \
             > keymap-drawer/lalapadgen2.yaml
 
+      - name: Inject custom layout into parsed YAML
+        run: |
+          python3 - <<'EOF'
+          import yaml
+
+          with open('keymap-drawer/lalapadgen2.yaml', 'r', encoding='utf-8') as f:
+              data = yaml.safe_load(f)
+
+          with open('config/lalapadgen2_layout.yaml', 'r', encoding='utf-8') as f:
+              layout = yaml.safe_load(f)
+
+          # コメントを除いたキー定義のみ抽出して layout フィールドに注入
+          data['layout'] = layout
+
+          with open('keymap-drawer/lalapadgen2.yaml', 'w', encoding='utf-8') as f:
+              yaml.dump(data, f, allow_unicode=True, default_flow_style=False)
+
+          print("Layout injected successfully")
+          EOF
+
       - name: Draw keymap
         run: |
           keymap -c config/keymap_drawer.config.yaml \
-            draw --layout config/lalapadgen2_layout.yaml \
+            draw \
             keymap-drawer/lalapadgen2.yaml \
             > keymap-drawer/lalapadgen2.svg
 
