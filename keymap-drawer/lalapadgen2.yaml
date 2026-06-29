@@ -1,6 +1,5 @@
 layers:
   JIS Fn/Sym:
-  - F1
   - F2
   - F3
   - F4
@@ -10,6 +9,7 @@ layers:
   - F8
   - F9
   - F10
+  - F11
   - EXCL
   - '"'
   - HASH
@@ -20,7 +20,7 @@ layers:
   - (
   - )
   - '='
-  - F11
+  - F1
   - +
   - ':'
   - Sft+0x87
@@ -116,7 +116,8 @@ layers:
   - I
   - O
   - P
-  - A
+  - h: LSHIFT
+    t: A
   - S
   - D
   - F
@@ -125,8 +126,9 @@ layers:
   - J
   - K
   - L
-  - SEMI
-  - Z
+  - A
+  - h: LSHIFT
+    t: Z
   - X
   - C
   - V
@@ -145,16 +147,16 @@ layers:
     t: SPACE
   - h: Nav/Num
     t: TAB
-  - LEFT SHIFT
-  - BACKSPACE
   - h: Nav/Num
     t: TAB
+  - LEFT SHIFT
+  - BACKSPACE
   - h: JIS Fn/Sym
     t: SPACE
   - h: Settings
-    t: かな
+    t: GRAVE
   - ENTER
-  - 英数
+  - GRAVE
   - RIGHT
   - DOWN
   - LEFT
@@ -163,7 +165,7 @@ layers:
   - LEFT
   - DOWN
   - RIGHT
-  - かな
+  - GRAVE
   - '&mkp LCLK'
   - '&mkp RCLK'
   - '&mkp MCLK'
@@ -182,29 +184,29 @@ layers:
   - LCTRL
   Nav/Num:
   - DEL
-  - KP7
-  - KP8
-  - KP9
+  - '7'
+  - '8'
+  - '9'
   - KP+
   - PgUp
-  - SLASH
-  - Ctl+HOME
   - HOME
+  - UP
+  - END
   - PrtSc
   - '&double_zero'
-  - KP4
-  - KP5
-  - KP6
+  - '4'
+  - '5'
+  - '6'
   - KP-
   - PgDn
-  - COMMA
-  - Ctl+END
-  - END
+  - LEFT
+  - DOWN
+  - RIGHT
   - '='
-  - KP0
-  - KP1
-  - KP2
-  - KP3
+  - '0'
+  - '1'
+  - '2'
+  - '3'
   - KP*
   - Ctl+Z
   - Ctl+X
@@ -213,7 +215,7 @@ layers:
   - Ctl+Y
   - t: ▽
     type: trans
-  - KP.
+  - DOT
   - COMMA
   - KP/
   - t: ▽
@@ -400,7 +402,8 @@ layers:
   - I
   - O
   - P
-  - A
+  - h: LSHIFT
+    t: A
   - S
   - D
   - F
@@ -409,8 +412,10 @@ layers:
   - J
   - K
   - L
-  - SEMI
-  - Z
+  - h: iPad Fn/Sym
+    t: SEMI
+  - h: LSHIFT
+    t: Z
   - X
   - C
   - V
@@ -429,16 +434,16 @@ layers:
     t: SPACE
   - h: Nav/Num
     t: TAB
-  - LEFT SHIFT
-  - BACKSPACE
   - h: Nav/Num
     t: TAB
+  - LEFT SHIFT
+  - BACKSPACE
   - h: iPad Fn/Sym
     t: SPACE
   - h: Settings
-    t: かな
+    t: GRAVE
   - ENTER
-  - 英数
+  - GRAVE
   - RIGHT
   - DOWN
   - LEFT
@@ -447,7 +452,7 @@ layers:
   - LEFT
   - DOWN
   - RIGHT
-  - かな
+  - GRAVE
   - '&mkp LCLK'
   - '&mkp RCLK'
   - '&mkp MCLK'
@@ -465,7 +470,6 @@ layers:
   - Gui+D
   - LCTRL
   iPad Fn/Sym:
-  - F1
   - F2
   - F3
   - F4
@@ -475,6 +479,7 @@ layers:
   - F8
   - F9
   - F10
+  - F11
   - EXCL
   - '"'
   - HASH
@@ -484,8 +489,9 @@ layers:
   - ''''
   - (
   - )
-  - '='
-  - F11
+  - t: '='
+    type: held
+  - F1
   - +
   - ':'
   - Sft+0x87
@@ -503,7 +509,8 @@ layers:
     type: trans
   - t: ▽
     type: trans
-  - type: held
+  - t: ▽
+    type: trans
   - t: ▽
     type: trans
   - t: ▽
