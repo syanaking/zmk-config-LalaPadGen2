@@ -36,7 +36,10 @@
     quick-tap-ms = <200>;
     require-prior-idle-ms = <125>;
 };
-&lt { quick-tap-ms = <200>; };
+&lt {
+    tapping-term-ms = <400>;
+    quick-tap-ms = <200>;
+};
 
 / {
     behaviors {
@@ -50,15 +53,6 @@
             #binding-cells = <2>;
         };
 
-        // L3 専用 hold-tap: tap=通常キー、hold=L3（400ms ホールド）
-        lt3: lt3 {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <400>;
-            quick-tap-ms = <0>;
-            flavor = "balanced";
-            bindings = <&mo>, <&kp>;
-        };
     };
 
     macros {
@@ -91,9 +85,9 @@
             display-name = "JIS Win";
             bindings = <
 &kp Q          &kp W          &kp E          &kp R          &kp T                                                            &kp Y          &kp U          &kp I          &kp O          &kp P
-&mt LSHIFT A   &kp S          &kp D          &kp F          &kp G                                                            &kp H          &kp J          &kp K          &kp L          &kp A
+&mt LSHIFT A   &kp S          &kp D          &kp F          &kp G                                                            &kp H          &kp J          &kp K          &kp L          &lt 1 SEMI
 &mt LSHIFT Z   &kp X          &kp C          &kp V          &kp B                                                            &kp N          &kp M          &kp COMMA      &kp DOT        &kp SLASH
-&kp LCTRL      &lt3 3 ESCAPE  &kp LWIN       &kp LALT       &lt 1 SPACE    &lt 2 TAB      &lt 2 TAB        &kp LEFT_SHIFT  &kp BACKSPACE  &lt 1 SPACE    &lt3 3 GRAVE                   &kp ENTER
+&kp LCTRL      &lt 3 ESCAPE   &kp LWIN       &kp LALT       &lt 1 SPACE    &lt 2 TAB      &lt 2 TAB        &kp LEFT_SHIFT  &kp BACKSPACE  &lt 1 SPACE    &lt 3 GRAVE                    &kp ENTER
                &kp GRAVE      &kp RIGHT      &kp DOWN       &kp LEFT       &kp UP                          &kp UP          &kp LEFT       &kp DOWN       &kp RIGHT      &kp GRAVE
 &mkp LCLK      &mkp RCLK      &mkp MCLK                                                                                                    &mkp LCLK      &mkp RCLK      &mkp MCLK
 &mkp MB4       &mkp MB5       &kp LG(TAB)    &kp LG(D)      &kp LCTRL                                      &mkp MB4        &mkp MB5       &kp LG(TAB)    &kp LG(D)      &kp LCTRL
@@ -127,9 +121,9 @@
 // L2 : Nav / 数字レイヤー
 //
 //  ┌──── Row 0 ───────────────────────────────────────────────────────────┐
-//  │ DEL │  7  │  8  │  9  │  +  ║ PgUp│  /  │C+Hm │ Home│PrtSc│
+//  │ DEL │  7  │  8  │  9  │  +  ║ PgUp│C+Hm │  ↑  │C+End│PrtSc│
 //  ├──── Row 1 ───────────────────────────────────────────────────────────┤
-//  │  00 │  4  │  5  │  6  │  -  ║ PgDn│  ,  │C+End│ End │  =  │
+//  │  00 │  4  │  5  │  6  │  -  ║ PgDn│  ←  │  ↓  │  →  │  =  │
 //  ├──── Row 2 ───────────────────────────────────────────────────────────┤
 //  │  0  │  1  │  2  │  3  │  *  ║C+Z  │C+X  │C+C  │C+V  │C+Y  │
 //  ├──── Thumb ───────────────────────────────────────────────────────────┤
@@ -138,7 +132,7 @@
         L2_NAV_NUM {
             display-name = "Nav/Num";
             bindings = <
-&kp DEL        &kp N7         &kp N8         &kp N9         &kp KP_PLUS                                                      &kp PG_UP      &kp HOME       &kp UP         &kp END        &kp PRINTSCREEN
+&kp DEL        &kp N7         &kp N8         &kp N9         &kp KP_PLUS                                                      &kp PG_UP      &kp LC(HOME)   &kp UP         &kp LC(END)    &kp PRINTSCREEN
 &double_zero   &kp N4         &kp N5         &kp N6         &kp KP_MINUS                                                     &kp PG_DN      &kp LEFT       &kp DOWN       &kp RIGHT      &kp JP_EQUAL
 &kp N0         &kp N1         &kp N2         &kp N3         &kp KP_MULTIPLY                                                  &kp LC(Z)      &kp LC(X)      &kp LC(C)      &kp LC(V)      &kp LC(Y)
 &trans         &kp DOT        &kp COMMA      &kp KP_DIVIDE  &trans         &mo 2          &trans           &trans          &mo 2          &trans         &trans                         &trans
@@ -160,7 +154,7 @@
 //  ├──── Thumb ────────────────────────────────────────────────────────────┤
 //  │---  │[L3] │ --- │C_PP │ --- │BTCLR║BTCLR│ --- │C_PP │ --- │[L3]│ ---│
 //  ├──── Nav : メディア操作 ─────────────────────────────────────────────┤
-//  │ ⏮   │Vol↓ │Mute │Vol↑ │ ⏭   ║ ⏮   │Vol↓ │Mute │Vol↑ │ ⏭   │
+//  │Mute │ ⏭   │Vol↓ │ ⏮   │Vol↑ ║Vol↑ │ ⏮   │Vol↓ │ ⏭   │Mute │
 // ════════════════════════════════════════════════════════════════════════════
         L3_SETTINGS {
             display-name = "Settings";
@@ -169,7 +163,7 @@
 &to 0          &to 4          &bt BT_CLR     &bootloader    &sys_reset                                                       &sys_reset     &bootloader    &bt BT_CLR     &to 4          &to 0
 &zip_dyn_scale ZDS_ALL ZDS_RST  &zip_dyn_scale ZDS_SC ZDS_DEC  &zip_dyn_scale ZDS_SC ZDS_INC  &zip_dyn_scale ZDS_XY ZDS_DEC  &zip_dyn_scale ZDS_XY ZDS_INC   &zip_dyn_scale ZDS_XY ZDS_INC  &zip_dyn_scale ZDS_XY ZDS_DEC  &zip_dyn_scale ZDS_SC ZDS_INC  &zip_dyn_scale ZDS_SC ZDS_DEC  &zip_dyn_scale ZDS_ALL ZDS_RST
 &trans         &mo 3          &trans         &kp C_PP       &trans         &bt BT_CLR     &bt BT_CLR       &trans          &kp C_PP       &trans         &mo 3                          &trans
-               &kp C_PREV     &kp C_VOL_DN   &kp C_MUTE     &kp C_VOL_UP   &kp C_NEXT                      &kp C_PREV      &kp C_VOL_DN   &kp C_MUTE     &kp C_VOL_UP   &kp C_NEXT
+               &kp C_MUTE     &kp C_NEXT     &kp C_VOL_DN   &kp C_PREV     &kp C_VOL_UP                    &kp C_VOL_UP    &kp C_PREV     &kp C_VOL_DN   &kp C_NEXT     &kp C_MUTE
 &trans         &trans         &trans                                                                                                       &trans         &trans         &trans
 &trans         &trans         &trans         &trans         &trans                                         &trans          &trans         &trans         &trans         &trans
             >;
@@ -185,8 +179,8 @@
 &kp Q          &kp W          &kp E          &kp R          &kp T                                                            &kp Y          &kp U          &kp I          &kp O          &kp P
 &mt LSHIFT A   &kp S          &kp D          &kp F          &kp G                                                            &kp H          &kp J          &kp K          &kp L          &lt 5 SEMI
 &mt LSHIFT Z   &kp X          &kp C          &kp V          &kp B                                                            &kp N          &kp M          &kp COMMA      &kp DOT        &kp SLASH
-&kp LCTRL      &lt3 3 ESCAPE  &kp LWIN       &kp LALT       &lt 5 SPACE    &lt 2 TAB      &lt 2 TAB        &kp LEFT_SHIFT  &kp BACKSPACE  &lt 5 SPACE    &lt3 3 GRAVE                   &kp ENTER
-               &kp GRAVE      &kp RIGHT      &kp DOWN       &kp LEFT       &kp UP                          &kp UP          &kp LEFT       &kp DOWN       &kp RIGHT      &kp GRAVE
+&kp LCTRL      &lt 3 ESCAPE   &kp LWIN       &kp LALT       &lt 5 SPACE    &lt 2 TAB      &lt 2 TAB        &kp LEFT_SHIFT  &kp BACKSPACE  &lt 5 SPACE    &lt 3 GRAVE                    &kp ENTER
+               &kp LANGUAGE_2 &kp RIGHT      &kp DOWN       &kp LEFT       &kp UP                          &kp UP          &kp LEFT       &kp DOWN       &kp RIGHT      &kp LANGUAGE_1
 &mkp LCLK      &mkp RCLK      &mkp MCLK                                                                                                    &mkp LCLK      &mkp RCLK      &mkp MCLK
 &mkp MB4       &mkp MB5       &kp LG(TAB)    &kp LG(D)      &kp LCTRL                                      &mkp MB4        &mkp MB5       &kp LG(TAB)    &kp LG(D)      &kp LCTRL
             >;
