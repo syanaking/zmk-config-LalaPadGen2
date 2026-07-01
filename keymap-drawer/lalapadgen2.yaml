@@ -19,8 +19,7 @@ layers:
   - ''''
   - (
   - )
-  - t: '='
-    type: held
+  - '~'
   - F1
   - +
   - ':'
@@ -30,7 +29,8 @@ layers:
   - '['
   - ']'
   - '0x89'
-  - F12
+  - t: F12
+    type: held
   - t: ▽
     type: trans
   - t: ▽
@@ -118,8 +118,7 @@ layers:
   - I
   - O
   - P
-  - h: LSHIFT
-    t: A
+  - A
   - S
   - D
   - F
@@ -128,8 +127,8 @@ layers:
   - J
   - K
   - L
-  - h: JIS Fn/Sym
-    t: SEMI
+  - h: Nav/Num
+    t: MINUS
   - h: LSHIFT
     t: Z
   - X
@@ -140,7 +139,8 @@ layers:
   - M
   - COMMA
   - DOT
-  - SLASH
+  - h: JIS Fn/Sym
+    t: SLASH
   - LCTRL
   - h: Settings
     t: ESCAPE
@@ -205,7 +205,8 @@ layers:
   - LEFT
   - DOWN
   - RIGHT
-  - '='
+  - t: '='
+    type: held
   - '0'
   - '1'
   - '2'
@@ -223,8 +224,7 @@ layers:
   - KP/
   - t: ▽
     type: trans
-  - t: Nav/Num
-    type: held
+  - Nav/Num
   - t: ▽
     type: trans
   - t: ▽
@@ -405,8 +405,7 @@ layers:
   - I
   - O
   - P
-  - h: LSHIFT
-    t: A
+  - A
   - S
   - D
   - F
@@ -415,8 +414,8 @@ layers:
   - J
   - K
   - L
-  - h: iPad Fn/Sym
-    t: SEMI
+  - h: Nav/Num
+    t: MINUS
   - h: LSHIFT
     t: Z
   - X
@@ -427,7 +426,8 @@ layers:
   - M
   - COMMA
   - DOT
-  - SLASH
+  - h: iPad Fn/Sym
+    t: SLASH
   - LCTRL
   - h: Settings
     t: ESCAPE
@@ -492,8 +492,7 @@ layers:
   - ''''
   - (
   - )
-  - t: '='
-    type: held
+  - '~'
   - F1
   - +
   - ':'
@@ -503,7 +502,8 @@ layers:
   - '['
   - ']'
   - '0x89'
-  - F12
+  - t: F12
+    type: held
   - t: ▽
     type: trans
   - t: ▽
