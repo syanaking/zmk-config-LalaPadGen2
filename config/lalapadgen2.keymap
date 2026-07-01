@@ -37,8 +37,7 @@
     require-prior-idle-ms = <125>;
 };
 &lt {
-    tapping-term-ms = <400>;
-    quick-tap-ms = <200>;
+    tapping-term-ms = <200>;
 };
 
 / {
@@ -204,6 +203,7 @@
         };
     };
 
+    /* conditional_layers は lt 3 の動作確認のため一時的に無効化
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
@@ -219,4 +219,5 @@
             then-layer = <3>;
         };
     };
+    */
 };
