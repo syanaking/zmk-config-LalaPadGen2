@@ -19,7 +19,8 @@ layers:
   - ''''
   - (
   - )
-  - '='
+  - t: '='
+    type: held
   - F1
   - +
   - ':'
@@ -38,7 +39,8 @@ layers:
     type: trans
   - t: ▽
     type: trans
-  - type: held
+  - t: ▽
+    type: trans
   - t: ▽
     type: trans
   - t: ▽
@@ -126,7 +128,8 @@ layers:
   - J
   - K
   - L
-  - A
+  - h: JIS Fn/Sym
+    t: SEMI
   - h: LSHIFT
     t: Z
   - X
@@ -189,9 +192,9 @@ layers:
   - '9'
   - KP+
   - PgUp
-  - HOME
+  - Ctl+HOME
   - UP
-  - END
+  - Ctl+END
   - PrtSc
   - '&double_zero'
   - '4'
@@ -349,16 +352,16 @@ layers:
   - Settings
   - t: ▽
     type: trans
+  - 🔇
+  - ⏭
+  - 🔉
+  - ⏮
+  - 🔊
+  - 🔊
   - ⏮
   - 🔉
-  - 🔇
-  - 🔊
   - ⏭
-  - ⏮
-  - 🔉
   - 🔇
-  - 🔊
-  - ⏭
   - t: ▽
     type: trans
   - t: ▽
@@ -443,7 +446,7 @@ layers:
   - h: Settings
     t: GRAVE
   - ENTER
-  - GRAVE
+  - 英数
   - RIGHT
   - DOWN
   - LEFT
@@ -452,7 +455,7 @@ layers:
   - LEFT
   - DOWN
   - RIGHT
-  - GRAVE
+  - かな
   - '&mkp LCLK'
   - '&mkp RCLK'
   - '&mkp MCLK'
