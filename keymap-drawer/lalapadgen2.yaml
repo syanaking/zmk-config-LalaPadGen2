@@ -146,9 +146,9 @@ layers:
     t: ESCAPE
   - Win
   - LALT
-  - h: JIS Fn/Sym
-    t: SPACE
   - h: Nav/Num
+    t: SPACE
+  - h: JIS Fn/Sym
     t: TAB
   - h: Nav/Num
     t: TAB
@@ -213,9 +213,9 @@ layers:
   - '3'
   - KP*
   - Ctl+Z
-  - Ctl+X
   - Ctl+C
   - Ctl+V
+  - Ctl+X
   - Ctl+Y
   - t: ▽
     type: trans
@@ -433,9 +433,9 @@ layers:
     t: ESCAPE
   - Win
   - LALT
-  - h: iPad Fn/Sym
-    t: SPACE
   - h: Nav/Num
+    t: SPACE
+  - h: iPad Fn/Sym
     t: TAB
   - h: Nav/Num
     t: TAB

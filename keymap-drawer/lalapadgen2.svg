@@ -552,14 +552,14 @@ path.combo {
 <g transform="translate(225, 200)" class="key keypos-34">
 <rect rx="6" ry="6" x="-23" y="-23" width="46" height="46" class="key"/>
 <text x="0" y="0" class="key tap">SPACE</text>
-<a href="#JIS-FnSym">
-<text x="0" y="19" class="key hold layer-activator"><tspan style="font-size: 70%">JIS Fn/Sym</tspan></text>
+<a href="#NavNum">
+<text x="0" y="19" class="key hold layer-activator">Nav/Num</text>
 </a></g>
 <g transform="translate(275, 200)" class="key keypos-35">
 <rect rx="6" ry="6" x="-23" y="-23" width="46" height="46" class="key"/>
 <text x="0" y="0" class="key tap">TAB</text>
-<a href="#NavNum">
-<text x="0" y="19" class="key hold layer-activator">Nav/Num</text>
+<a href="#JIS-FnSym">
+<text x="0" y="19" class="key hold layer-activator"><tspan style="font-size: 70%">JIS Fn/Sym</tspan></text>
 </a></g>
 <g transform="translate(325, 200)" class="key keypos-36">
 <rect rx="6" ry="6" x="-23" y="-23" width="46" height="46" class="key"/>
@@ -830,15 +830,15 @@ path.combo {
 </g>
 <g transform="translate(425, 125)" class="key keypos-26">
 <rect rx="6" ry="6" x="-23" y="-23" width="46" height="46" class="key"/>
-<text x="0" y="0" class="key tap">Ctl+X</text>
+<text x="0" y="0" class="key tap">Ctl+C</text>
 </g>
 <g transform="translate(475, 125)" class="key keypos-27">
 <rect rx="6" ry="6" x="-23" y="-23" width="46" height="46" class="key"/>
-<text x="0" y="0" class="key tap">Ctl+C</text>
+<text x="0" y="0" class="key tap">Ctl+V</text>
 </g>
 <g transform="translate(525, 125)" class="key keypos-28">
 <rect rx="6" ry="6" x="-23" y="-23" width="46" height="46" class="key"/>
-<text x="0" y="0" class="key tap">Ctl+V</text>
+<text x="0" y="0" class="key tap">Ctl+X</text>
 </g>
 <g transform="translate(575, 125)" class="key keypos-29">
 <rect rx="6" ry="6" x="-23" y="-23" width="46" height="46" class="key"/>
@@ -1482,14 +1482,14 @@ path.combo {
 <g transform="translate(225, 200)" class="key keypos-34">
 <rect rx="6" ry="6" x="-23" y="-23" width="46" height="46" class="key"/>
 <text x="0" y="0" class="key tap">SPACE</text>
-<a href="#iPad-FnSym">
-<text x="0" y="19" class="key hold layer-activator"><tspan style="font-size: 64%">iPad Fn/Sym</tspan></text>
+<a href="#NavNum">
+<text x="0" y="19" class="key hold layer-activator">Nav/Num</text>
 </a></g>
 <g transform="translate(275, 200)" class="key keypos-35">
 <rect rx="6" ry="6" x="-23" y="-23" width="46" height="46" class="key"/>
 <text x="0" y="0" class="key tap">TAB</text>
-<a href="#NavNum">
-<text x="0" y="19" class="key hold layer-activator">Nav/Num</text>
+<a href="#iPad-FnSym">
+<text x="0" y="19" class="key hold layer-activator"><tspan style="font-size: 64%">iPad Fn/Sym</tspan></text>
 </a></g>
 <g transform="translate(325, 200)" class="key keypos-36">
 <rect rx="6" ry="6" x="-23" y="-23" width="46" height="46" class="key"/>
